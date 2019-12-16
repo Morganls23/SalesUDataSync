@@ -26,7 +26,7 @@ services:
   pingdatasync:
     image: pingidentity/pingdatasync:${PING_IDENTITY_DEVOPS_TAG}
     environment:
-      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_URL=https://github.com/Morganls23/SalesUDataSync.git
       - SERVER_PROFILE_PATH=simple-sync/pingdatasync
     env_file:
       - ~/.pingidentity/devops
@@ -37,13 +37,13 @@ services:
       - 2443:443
     networks:
       - pingnet
-  
+
   pingdataconsole:
     image: pingidentity/pingdataconsole:${PING_IDENTITY_DEVOPS_TAG}
     ports:
       - 8443:8443
-    networks: 
-      - pingnet  
-              
+    networks:
+      - pingnet
+
 networks:
     pingnet:
