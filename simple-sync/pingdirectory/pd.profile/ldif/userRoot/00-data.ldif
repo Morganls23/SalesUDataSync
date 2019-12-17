@@ -85,12 +85,12 @@ cn: group.1
 member: uid=user.2,ou=People,ou=source,${USER_BASE_DN}
 member: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
 
-dn: uid=administrator,ou=People,${USER_BASE_DN}
+dn: uid=dataSync,ou=People,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 sn: DataSync
-cn: Administrator
+cn: dataSync
 uid: dataSync
 userPassword: 2FederateM0re
