@@ -88,8 +88,7 @@ member: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
 dn: uid=dataSync,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
+objectClass: uidObject
 sn: DataSync
 cn: dataSync
 uid: dataSync
