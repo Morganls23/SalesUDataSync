@@ -36,7 +36,8 @@ userPassword: 2FederateM0re
 dn: uid=user.1,ou=People,ou=company,${USER_BASE_DN}
 objectClass: top
 objectClass: person
-objectClass: uidObject
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
 sn: Seawell
 cn: Esko Seawell
 uid: user.1
@@ -46,7 +47,8 @@ userPassword: 2FederateM0re
 dn: uid=user.2,ou=People,ou=company,${USER_BASE_DN}
 objectClass: top
 objectClass: person
-objectClass: uidObject
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
 sn: Tancordo
 cn: Sidonia Tancordo
 uid: user.2
@@ -56,7 +58,8 @@ userPassword: 2FederateM0re
 dn: uid=user.3,ou=People,ou=company,${USER_BASE_DN}
 objectClass: top
 objectClass: person
-objectClass: uidObject
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
 sn: Knio
 cn: Pierre-Marc Knio
 uid: user.3
