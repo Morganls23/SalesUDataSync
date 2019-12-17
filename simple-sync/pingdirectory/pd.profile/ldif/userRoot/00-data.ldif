@@ -30,7 +30,7 @@ objectClass: inetOrgPerson
 sn: Brooke
 cn: Raeann Brooke
 uid: user.0
-mail:user.0@
+mail:user.0@test.com
 userPassword: 2FederateM0re
 
 dn: uid=user.1,ou=People,ou=company,${USER_BASE_DN}
@@ -40,6 +40,7 @@ objectClass: uidObject
 sn: Seawell
 cn: Esko Seawell
 uid: user.1
+mail:user.1@test.com
 userPassword: 2FederateM0re
 
 dn: uid=user.2,ou=People,ou=company,${USER_BASE_DN}
@@ -49,6 +50,7 @@ objectClass: uidObject
 sn: Tancordo
 cn: Sidonia Tancordo
 uid: user.2
+mail:user.2@test.com
 userPassword: 2FederateM0re
 
 dn: uid=user.3,ou=People,ou=company,${USER_BASE_DN}
@@ -58,6 +60,7 @@ objectClass: uidObject
 sn: Knio
 cn: Pierre-Marc Knio
 uid: user.3
+mail:user.3@test.com
 userPassword: 2FederateM0re
 
 dn: cn=group.0,ou=groups,ou=company,${USER_BASE_DN}
