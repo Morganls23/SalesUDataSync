@@ -10,10 +10,6 @@ objectClass: top
 objectClass: organizationalUnit
 ou: source
 
-dn: ou=destination,${USER_BASE_DN}
-objectClass: top
-objectClass: organizationalUnit
-ou: destination
 
 dn: ou=people,ou=source,${USER_BASE_DN}
 objectClass: top
@@ -25,20 +21,12 @@ objectClass: top
 objectClass: organizationalUnit
 ou: groups
 
-dn: ou=people,ou=destination,${USER_BASE_DN}
-objectClass: top
-objectClass: organizationalUnit
-ou: People
-
-dn: ou=groups,ou=destination,${USER_BASE_DN}
-objectClass: top
-objectClass: organizationalUnit
-ou: groups
 
 dn: uid=user.0,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
-objectClass: uidObject
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
 sn: Brooke
 cn: Raeann Brooke
 uid: user.0
