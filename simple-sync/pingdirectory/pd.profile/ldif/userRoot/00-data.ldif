@@ -10,7 +10,6 @@ objectClass: top
 objectClass: organizationalUnit
 ou: company
 
-
 dn: ou=people,ou=company,${USER_BASE_DN}
 objectClass: top
 objectClass: organizationalUnit

@@ -62,116 +62,116 @@ dsconfig create-attribute-mapping \
     --type direct \
     --set from-attribute:entryUUID
 
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name username \
-        --type constructed \
-        --set value-pattern:{givenname}.{sn}
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name username \
+    --type constructed \
+    --set value-pattern:{givenname}.{sn}
 
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name password \
-        --type direct \
-        --set from-attribute:userPassword
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name password \
+    --type direct \
+    --set from-attribute:userPassword
 
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name email \
-        --type direct \
-        --set from-attribute:mail
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name email \
+    --type direct \
+    --set from-attribute:mail
 
-    # When using an Attribute Mapping to control a user's Population it is
-    # necessary to define population as a JSON Attribute. See the comment below
-    # attached to the JSON Attribute definition.
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name population \
-        --type constructed \
-        --set 'value-pattern:{{"name":"${DESTINATION_POPULATION_ID}"}}'
+# When using an Attribute Mapping to control a user's Population it is
+# necessary to define population as a JSON Attribute. See the comment below
+# attached to the JSON Attribute definition.
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name population \
+    --type constructed \
+    --set 'value-pattern:{{"name":"${DESTINATION_POPULATION_ID}"}}'
 
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name primaryPhone \
-        --type direct \
-        --set from-attribute:telephoneNumber
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name primaryPhone \
+    --type direct \
+    --set from-attribute:telephoneNumber
 
-    dsconfig create-attribute-mapping \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name name \
-        --type json
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name name \
+    --type json
 
-    dsconfig create-json-attribute-mapping-field \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name name \
-        --field-name formatted \
-        --set from-attribute:cn \
-        --set json-type:string
+dsconfig create-json-attribute-mapping-field \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name name \
+    --field-name formatted \
+    --set from-attribute:cn \
+    --set json-type:string
 
-    dsconfig create-json-attribute-mapping-field \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name name \
-        --field-name given \
-        --set from-attribute:givenName \
-        --set json-type:string
+dsconfig create-json-attribute-mapping-field \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name name \
+    --field-name given \
+    --set from-attribute:givenName \
+    --set json-type:string
 
-    dsconfig create-json-attribute-mapping-field \
-        --map-name PingDirectory_to_PingOne_User_Map \
-        --mapping-name name \
-        --field-name family \
-        --set from-attribute:sn \
-        --set json-type:string
+dsconfig create-json-attribute-mapping-field \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name name \
+    --field-name family \
+    --set from-attribute:sn \
+    --set json-type:string
 
-    # Create a Sync Class and associate the defined Attribute Map
-    dsconfig create-sync-class \
-        --pipe-name PingDirectory_to_PingOne \
-        --class-name "PingDirectory_to_PingOne User Sync Class" \
-        --set allow-destination-renames:false \
-        --set attribute-map:PingDirectory_to_PingOne_User_Map \
-        --set auto-mapped-source-attribute:-none- \
-        --set destination-correlation-attributes:externalId \
-        --set destination-correlation-attributes:username \
-        --set destination-correlation-attributes:email \
-        --set destination-create-only-attribute:resourceType \
-        --set creates-as-modifies:true \
-        --set include-filter:(objectClass=person)
+# Create a Sync Class and associate the defined Attribute Map
+dsconfig create-sync-class \
+    --pipe-name PingDirectory_to_PingOne \
+    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --set allow-destination-renames:false \
+    --set attribute-map:PingDirectory_to_PingOne_User_Map \
+    --set auto-mapped-source-attribute:-none- \
+    --set destination-correlation-attributes:externalId \
+    --set destination-correlation-attributes:username \
+    --set destination-correlation-attributes:email \
+    --set destination-create-only-attribute:resourceType \
+    --set creates-as-modifies:true \
+    --set include-filter:(objectClass=person)
 
-    # Define JSON Attributes
-    dsconfig create-json-attribute \
-        --pipe-name PingDirectory_to_PingOne \
-        --class-name "PingDirectory_to_PingOne User Sync Class" \
-        --attribute-name name
+# Define JSON Attributes
+dsconfig create-json-attribute \
+    --pipe-name PingDirectory_to_PingOne \
+    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --attribute-name name
 
-    # It is important that the JSON Attribute defined for Population
-    # matches the manner in which you intend to refer to Populations.
-    # When using the Population ID, "id-field" and "include-field" should
-    # be set to "id". When using the Population Name, "id-field" and
-    # "include-field" should be set to "name". This example assumes that you
-    # are using the Population names in your Attribute Mappings for Population.
-    dsconfig create-json-attribute \
-        --pipe-name PingDirectory_to_PingOne \
-        --class-name "PingDirectory_to_PingOne User Sync Class" \
-        --attribute-name population \
-        --set id-field:name \
-        --set include-field:name
+# It is important that the JSON Attribute defined for Population
+# matches the manner in which you intend to refer to Populations.
+# When using the Population ID, "id-field" and "include-field" should
+# be set to "id". When using the Population Name, "id-field" and
+# "include-field" should be set to "name". This example assumes that you
+# are using the Population names in your Attribute Mappings for Population.
+dsconfig create-json-attribute \
+    --pipe-name PingDirectory_to_PingOne \
+    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --attribute-name population \
+    --set id-field:name \
+    --set include-field:name
 
-    # Setup Debug Targets for added logging
-    #dsconfig create-debug-target \
-    #    --publisher-name "File-Based Debug Logger" \
-    #    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
-    #    --set debug-level:verbose
+# Setup Debug Targets for added logging
+#dsconfig create-debug-target \
+#    --publisher-name "File-Based Debug Logger" \
+#    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
+#    --set debug-level:verbose
 
-    # This will log all of the raw HTTP traffic between PingOne and DataSync,
-    # which can include sensitive information like user passwords and
-    # authentication tokens. DO NOT leave on in a Production environment.
-    #dsconfig create-debug-target \
-    #    --publisher-name "File-Based Debug Logger" \
-    #    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
-    #    --set debug-level:verbose
+# This will log all of the raw HTTP traffic between PingOne and DataSync,
+# which can include sensitive information like user passwords and
+# authentication tokens. DO NOT leave on in a Production environment.
+#dsconfig create-debug-target \
+#    --publisher-name "File-Based Debug Logger" \
+#    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
+#    --set debug-level:verbose
 
 
-    #### RESYNC ####
-    # This is an example of running resync. If resync is being run against an
-    # instance that has already been loaded with users, it is recommended that
-    # the password attribute be added to the list of ignored destination attributes.
-    #
-    #   resync --pipe-name [SYNC_PIPE_NAME] --excludeDestinationAttr password
+#### RESYNC ####
+# This is an example of running resync. If resync is being run against an
+# instance that has already been loaded with users, it is recommended that
+# the password attribute be added to the list of ignored destination attributes.
+#
+#   resync --pipe-name [SYNC_PIPE_NAME] --excludeDestinationAttr password
