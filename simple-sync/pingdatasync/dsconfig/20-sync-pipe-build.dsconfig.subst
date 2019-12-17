@@ -21,10 +21,10 @@ dsconfig create-sync-destination \
     --destination-name PingOne \
     --type ping-one-customer \
     --set api-url:https://api.pingone.com/v1 \
-    --set auth-url:https://auth.pingone.com/[PING_ONE_ENV_ID]/as/token \
-    --set environment-id:[PING_ONE_ENV_ID] \
-    --set oauth-client-id:[PING_ONE_OAUTH_CLIENT_ID] \
-    --set oauth-client-secret:[PING_ONE_OAUTH_CLIENT_SECRET]
+    --set auth-url:https://auth.pingone.com/${PING_ONE_ENV_ID}/as/token \
+    --set environment-id:${PING_ONE_ENV_ID} \
+    --set oauth-client-id:${PING_ONE_OAUTH_CLIENT_ID} \
+    --set oauth-client-secret:${PING_ONE_OAUTH_CLIENT_SECRET}
 # Create A Sync Pipe
 dsconfig create-sync-pipe \
     --pipe-name PingDirectory_to_PingOne \
@@ -77,7 +77,7 @@ dsconfig create-attribute-mapping \
     dsconfig create-attribute-mapping \
         --map-name PingDirectory_to_PingOne_User_Map \
         --mapping-name email \
-        --type ditect \
+        --type direct \
         --set from-attribute:mail
 
     # When using an Attribute Mapping to control a user's Population it is
@@ -87,7 +87,7 @@ dsconfig create-attribute-mapping \
         --map-name PingDirectory_to_PingOne_User_Map \
         --mapping-name population \
         --type constructed \
-        --set 'value-pattern:{{"name":"[DEFAULT_POPULATION_NAME]"}}'
+        --set 'value-pattern:{{"name":"${DEFAULT_POPULATION_NAME}"}}'
 
     dsconfig create-attribute-mapping \
         --map-name PingDirectory_to_PingOne_User_Map \
