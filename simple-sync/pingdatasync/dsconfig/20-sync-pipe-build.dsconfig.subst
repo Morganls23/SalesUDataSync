@@ -153,8 +153,8 @@ dsconfig create-json-attribute \
     --pipe-name PingDirectory_to_PingOne \
     --class-name "PingDirectory_to_PingOne User Sync Class" \
     --attribute-name population \
-    --set id-field:name \
-    --set include-field:name
+    --set id-field:id \
+    --set include-field:id
 
 # Setup Debug Targets for added logging
 #dsconfig create-debug-target \
