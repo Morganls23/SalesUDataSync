@@ -157,10 +157,10 @@ dsconfig create-json-attribute \
     --set include-field:id
 
 # Setup Debug Targets for added logging
-#dsconfig create-debug-target \
-#    --publisher-name "File-Based Debug Logger" \
-#    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
-#    --set debug-level:verbose
+dsconfig create-debug-target \
+    --publisher-name "File-Based Debug Logger" \
+    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
+    --set debug-level:verbose
 
 # This will log all of the raw HTTP traffic between PingOne and DataSync,
 # which can include sensitive information like user passwords and
