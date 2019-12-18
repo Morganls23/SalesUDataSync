@@ -32,7 +32,7 @@ dsconfig create-sync-pipe \
     --pipe-name PingDirectory_to_PingOne \
     --set 'retry-backoff-increase-by:100 ms' \
     --set sync-destination:PingOne \
-    --set sync-source:PingDirectory
+    --set sync-source:pingdirectory
 
 
 # Define Attribute mappings
