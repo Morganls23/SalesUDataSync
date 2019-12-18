@@ -3,8 +3,8 @@
 # Configure the sync pipe end-to-end
 #
 dsconfig create-external-server \
-    --server-name pingdirectory \
-    --type ping-identity-ds \
+  --server-name pingdirectory \
+  --type ping-identity-ds \
 	--set server-host-name:pingdirectory \
 	--set location:${LOCATION} \
 	--set bind-dn:cn=sync \
@@ -32,7 +32,7 @@ dsconfig create-sync-pipe \
     --pipe-name PingDirectory_to_PingOne \
     --set 'retry-backoff-increase-by:100 ms' \
     --set sync-destination:PingOne \
-    --set sync-source:pingdirectory
+    --set sync-source:pingdirectory_source
 
 
 # Define Attribute mappings
