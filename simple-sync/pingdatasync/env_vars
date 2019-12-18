@@ -7,7 +7,7 @@
 #                or
 #         export MY_ENVIRONMENT_VARIABLE_1=${MY_ENVIRONMENT_VARIABLE_1:-wasNotSetElsewhere}
 # The location MUST be provided
-#LOCATION=${LOCATION:-Denver}
+export LOCATION=${LOCATION:-Denver}
 
 # The root user may be provided (Default: cn=directory manager)
 ROOT_USER_DN=cn=administrator
@@ -30,4 +30,9 @@ USER_BASE_DN=o=sync
 # CERTIFICATE_NICKNAME=server-cert
 
 #TAIL_LOG_FILES="${SERVER_ROOT_DIR}/logs/sync ${SERVER_ROOT_DIR}/logs/errors"
-PING_IDENTITY_ACCEPT_EULA=YES
+
+
+#PingOne for Customers information
+PING_ONE_ENV_ID=7334523a-4a2d-4dd6-9f37-93c60114e938
+PING_ONE_OAUTH_CLIENT_ID=a54ffef1-4e37-4928-8479-7ed795d973fc
+PING_ONE_OAUTH_CLIENT_SECRET=88RoMzyLrL4E-urzkbvINhyE_qlyU1.Cn.l0jnMPKa4t6E0_P5ktS4LlVD80AX_E

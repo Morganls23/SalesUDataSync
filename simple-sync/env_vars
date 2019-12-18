@@ -1,13 +1,13 @@
 #
 # NOTICE: the values in this file will override the values provided to the container
-#
+#         
 #         if that is not the intent, and a default value should be set instead
 #         use a syntax like:
 #         export MY_ENVIRONMENT_VARIABLE_0=${MY_ENVIRONMENT_VARIABLE_0:=myDefaultValue}
 #                or
 #         export MY_ENVIRONMENT_VARIABLE_1=${MY_ENVIRONMENT_VARIABLE_1:-wasNotSetElsewhere}
 # The location MUST be provided
-LOCATION=${LOCATION:-Docker}
+export LOCATION=${LOCATION:-Docker}
 
 # The root user may be provided (Default: cn=directory manager)
 #ROOT_USER_DN=cn=administrator
@@ -25,7 +25,7 @@ ROOT_USER_PASSWORD_FILE=/opt/in/pwd
 ADMIN_USER_PASSWORD_FILE=/opt/in/pwd
 
 # The user base dn may be provided (Default: dc=example,dc=com)
-USER_BASE_DN=dc=yourCompanyName,dc=com
+# USER_BASE_DN=dc=yourCompanyName,dc=com
 
 # The Java heap size may be provided
 # MAX_HEAP_SIZE=384m
@@ -43,13 +43,3 @@ ENCRYPTION_PASSWORD_FILE=/opt/in/pwd
 # whitespace-separated list of the log files to tail on the container's standard output
 # This is optional and will default to tailing access log
 #TAIL_LOG_FILES="/opt/out/instance/logs/access /opt/out/instance/logs/audit"
-
-
-#PingOne for Customers Variables
-PING_ONE_ENV_ID=7334523a-4a2d-4dd6-9f37-93c60114e938
-PING_ONE_OAUTH_CLIENT_ID=a54ffef1-4e37-4928-8479-7ed795d973fc
-PING_ONE_OAUTH_CLIENT_SECRET=88RoMzyLrL4E-urzkbvINhyE_qlyU1.Cn.l0jnMPKa4t6E0_P5ktS4LlVD80AX_E
-DESTINATION_POPULATION_ID=206d0de3-4e0f-4ab7-9997-72bf8a12fce5
-
-#accept new rule or whatever
-PING_IDENTITY_ACCEPT_EULA=YES

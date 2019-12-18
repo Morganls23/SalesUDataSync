@@ -5,85 +5,82 @@ o: sync
 aci: (targetattr!="userPassword")(version 3.0; acl "Allow anonymous read access for anyone"; allow (read,search,compare) userdn="ldap:///anyone";)
 aci: (targetattr="*")(version 3.0; acl "Allow users to update their own entries"; allow (write) userdn="ldap:///self";)
 
-dn: ou=company,${USER_BASE_DN}
+dn: ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: organizationalUnit
-ou: company
+ou: source
 
-dn: ou=people,ou=company,${USER_BASE_DN}
+dn: ou=destination,${USER_BASE_DN}
+objectClass: top
+objectClass: organizationalUnit
+ou: destination
+
+dn: ou=people,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: organizationalUnit
 ou: people
 
-dn: ou=groups,ou=company,${USER_BASE_DN}
+dn: ou=groups,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: organizationalUnit
 ou: groups
 
-
-dn: uid=user.0,ou=People,ou=company,${USER_BASE_DN}
+dn: ou=people,ou=destination,${USER_BASE_DN}
 objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Brooke
-cn: Raeann Brooke
-uid: user.0
-mail:user.0@test.com
-userPassword: 2FederateM0re
+objectClass: organizationalUnit
+ou: People
 
-dn: uid=user.1,ou=People,ou=company,${USER_BASE_DN}
+dn: ou=groups,ou=destination,${USER_BASE_DN}
 objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Seawell
-cn: Esko Seawell
-uid: user.1
-mail:user.1@test.com
-userPassword: 2FederateM0re
+objectClass: organizationalUnit
+ou: groups
 
-dn: uid=user.2,ou=People,ou=company,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Tancordo
-cn: Sidonia Tancordo
-uid: user.2
-mail:user.2@test.com
-userPassword: 2FederateM0re
-
-dn: uid=user.3,ou=People,ou=company,${USER_BASE_DN}
-objectClass: top
-objectClass: person
-objectClass: organizationalPerson
-objectClass: inetOrgPerson
-sn: Knio
-cn: Pierre-Marc Knio
-uid: user.3
-mail:user.3@test.com
-userPassword: 2FederateM0re
-
-dn: cn=group.0,ou=groups,ou=company,${USER_BASE_DN}
-objectClass: top
-objectClass: groupOfNames
-cn: group.0
-member: uid=user.0,ou=People,ou=company,${USER_BASE_DN}
-member: uid=user.1,ou=People,ou=company,${USER_BASE_DN}
-
-dn: cn=group.1,ou=groups,ou=company,${USER_BASE_DN}
-objectClass: top
-objectClass: groupOfNames
-cn: group.1
-member: uid=user.2,ou=People,ou=company,${USER_BASE_DN}
-member: uid=user.3,ou=People,ou=company,${USER_BASE_DN}
-
-dn: uid=dataSync,ou=People,ou=company,${USER_BASE_DN}
+dn: uid=user.0,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: uidObject
-sn: DataSync
-cn: dataSync
-uid: dataSync
+sn: Brooke
+cn: Raeann Brooke
+uid: user.0
 userPassword: 2FederateM0re
+
+dn: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
+objectClass: top
+objectClass: person
+objectClass: uidObject
+sn: Seawell
+cn: Esko Seawell
+uid: user.1
+userPassword: 2FederateM0re
+
+dn: uid=user.2,ou=People,ou=source,${USER_BASE_DN}
+objectClass: top
+objectClass: person
+objectClass: uidObject
+sn: Tancordo
+cn: Sidonia Tancordo
+uid: user.2
+userPassword: 2FederateM0re
+
+dn: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
+objectClass: top
+objectClass: person
+objectClass: uidObject
+sn: Knio
+cn: Pierre-Marc Knio
+uid: user.3
+userPassword: 2FederateM0re
+
+dn: cn=group.0,ou=groups,ou=source,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.0
+member: uid=user.0,ou=People,ou=source,${USER_BASE_DN}
+member: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
+
+dn: cn=group.1,ou=groups,ou=source,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.1
+member: uid=user.2,ou=People,ou=source,${USER_BASE_DN}
+member: uid=user.3,ou=People,ou=source,${USER_BASE_DN}

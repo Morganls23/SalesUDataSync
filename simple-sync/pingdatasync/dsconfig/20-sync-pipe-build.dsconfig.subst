@@ -3,21 +3,21 @@
 # Configure the sync pipe end-to-end
 #
 dsconfig create-external-server \
-  --server-name pingdirectory \
-  --type ping-identity-ds \
+    --server-name pingdirectory \
+    --type ping-identity-ds \
 	--set server-host-name:pingdirectory \
 	--set location:${LOCATION} \
-	--set bind-dn:cn=datasync \
+	--set bind-dn:cn=sync \
 	--set "password:AABkwRkIRfApR+R1uZPSciaUPmtEtTzjC/4=" \
 	--set initial-connections:1 \
 	--set max-connections:4
-
 dsconfig create-sync-source \
     --source-name pingdirectory_source  \
     --type ping-identity  \
-    --set base-dn:ou=company,${USER_BASE_DN}  \
+    --set base-dn:ou=source,${USER_BASE_DN}  \
     --set server:pingdirectory  \
     --set use-changelog-batch-request:true
+
 dsconfig create-sync-destination \
     --destination-name PingOne \
     --type ping-one-customer \
@@ -26,13 +26,13 @@ dsconfig create-sync-destination \
     --set environment-id:${PING_ONE_ENV_ID} \
     --set oauth-client-id:${PING_ONE_OAUTH_CLIENT_ID} \
     --set oauth-client-secret:${PING_ONE_OAUTH_CLIENT_SECRET}
+
 # Create A Sync Pipe
 dsconfig create-sync-pipe \
     --pipe-name PingDirectory_to_PingOne \
     --set 'retry-backoff-increase-by:100 ms' \
     --set sync-destination:PingOne \
     --set sync-source:PingDirectory
-
 
 
 # Define Attribute mappings
@@ -78,8 +78,8 @@ dsconfig create-attribute-mapping \
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name email \
-    --type direct \
-    --set from-attribute:mail
+    --type constructed \
+    --set value-pattern:{givenname}.{sn}@example.com
 
 # When using an Attribute Mapping to control a user's Population it is
 # necessary to define population as a JSON Attribute. See the comment below
@@ -88,7 +88,7 @@ dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name population \
     --type constructed \
-    --set 'value-pattern:{{"name":"${DESTINATION_POPULATION_ID}"}}'
+    --set 'value-pattern:{{"name":"[DEFAULT_POPULATION_NAME]"}}'
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
