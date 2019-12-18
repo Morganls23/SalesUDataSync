@@ -19,7 +19,7 @@ services:
     #   - ${HOME}/projects/devops/volumes/simple-sync.pingdirectory:/opt/out
     #   - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdirectory:/opt/in
     ports:
-      - 1636:1636
+      - 1636:636
       - 1443:443
     networks:
       - pingnet
@@ -35,7 +35,7 @@ services:
     #volumes:
     #   - ${HOME}/projects/devops/volumes/simple-sync.pingdatasync:/opt/out
     ports:
-      - 2636:2636
+      - 2636:636
       - 2443:443
     networks:
       - pingnet
