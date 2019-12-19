@@ -44,6 +44,7 @@ sn: Brooke
 cn: Raeann Brooke
 uid: user.0
 givenName: Raeann
+telephoneNumber: 2677601164
 userPassword: 2FederateM0re
 
 dn: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
