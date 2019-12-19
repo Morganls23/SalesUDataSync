@@ -17,7 +17,7 @@ dsconfig create-sync-source \
     --type ping-identity  \
     --set base-dn:ou=source,${USER_BASE_DN}  \
     --set server:pingdirectory  \
-    --set use-changelog-batch-request:true
+#    --set use-changelog-batch-request:true
 
 dsconfig create-sync-destination \
     --destination-name PingOne \
