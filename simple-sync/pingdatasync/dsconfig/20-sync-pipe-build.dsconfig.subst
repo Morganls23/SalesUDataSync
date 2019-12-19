@@ -165,10 +165,10 @@ dsconfig create-debug-target \
 # This will log all of the raw HTTP traffic between PingOne and DataSync,
 # which can include sensitive information like user passwords and
 # authentication tokens. DO NOT leave on in a Production environment.
-#dsconfig create-debug-target \
-#    --publisher-name "File-Based Debug Logger" \
-#    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
-#    --set debug-level:verbose
+dsconfig create-debug-target \
+    --publisher-name "File-Based Debug Logger" \
+    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
+    --set debug-level:verbose
 
 
 #### RESYNC ####
