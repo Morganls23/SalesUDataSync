@@ -39,9 +39,11 @@ dn: uid=user.0,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: uidObject
+objectClass: inetOrgPerson
 sn: Brooke
 cn: Raeann Brooke
 uid: user.0
+givenName: Raeann
 userPassword: 2FederateM0re
 
 dn: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
