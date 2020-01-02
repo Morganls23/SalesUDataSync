@@ -89,7 +89,7 @@ dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name population \
     --type constructed \
-    --set 'value-pattern:{{"id":"${POPULATION_ID}"}}'
+    --set 'value-pattern:{{"id":"206d0de3-4e0f-4ab7-9997-72bf8a12fce5"}}'
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
