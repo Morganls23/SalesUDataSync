@@ -53,6 +53,8 @@ objectClass: person
 objectClass: uidObject
 sn: Seawell
 cn: Esko Seawell
+givenName: Esko
+telephoneNumber:5555555554
 uid: user.1
 userPassword: 2FederateM0re
 
@@ -63,6 +65,8 @@ objectClass: uidObject
 sn: Tancordo
 cn: Sidonia Tancordo
 uid: user.2
+givenName: Sidonia
+telephoneNumber: 3258956452
 userPassword: 2FederateM0re
 
 dn: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
@@ -71,6 +75,8 @@ objectClass: person
 objectClass: uidObject
 sn: Knio
 cn: Pierre-Marc Knio
+givenName:Pierre-Marc
+telephoneNumber: 4567892889
 uid: user.3
 userPassword: 2FederateM0re
 
