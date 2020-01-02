@@ -51,6 +51,7 @@ dn: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: uidObject
+objectClass: inetOrgPerson
 sn: Seawell
 cn: Esko Seawell
 givenName: Esko
@@ -62,6 +63,7 @@ dn: uid=user.2,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: uidObject
+objectClass: inetOrgPerson
 sn: Tancordo
 cn: Sidonia Tancordo
 uid: user.2
@@ -73,6 +75,7 @@ dn: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: uidObject
+objectClass: inetOrgPerson
 sn: Knio
 cn: Pierre-Marc Knio
 givenName:Pierre-Marc
