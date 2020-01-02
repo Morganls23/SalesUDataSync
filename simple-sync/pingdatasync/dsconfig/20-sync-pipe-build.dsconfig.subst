@@ -127,13 +127,12 @@ dsconfig create-json-attribute-mapping-field \
 dsconfig create-sync-class \
     --pipe-name PingDirectory_to_PingOne \
     --class-name "PingDirectory_to_PingOne User Sync Class" \
-    --set allow-destination-renames:false \
+    --set allow-destination-renames:true \
     --set attribute-map:PingDirectory_to_PingOne_User_Map \
     --set auto-mapped-source-attribute:-none- \
     --set destination-correlation-attributes:externalId \
     --set destination-correlation-attributes:username \
     --set destination-correlation-attributes:email \
-    --set destination-create-only-attribute:resourceType \
     --set creates-as-modifies:true \
     --set include-filter:(objectClass=person)
 
