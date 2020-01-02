@@ -52,6 +52,7 @@ dsconfig create-sync-pipe \
 dsconfig create-attribute-map \
     --map-name PingDirectory_to_PingOne_User_Map
 
+
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name externalId \
@@ -121,7 +122,7 @@ dsconfig create-json-attribute-mapping-field \
 dsconfig create-sync-class \
     --pipe-name PingDirectory_to_PingOne \
     --class-name "PingDirectory_to_PingOne User Sync Class" \
-    --set allow-destination-renames:true \
+    --set allow-destination-renames:false \
     --set attribute-map:PingDirectory_to_PingOne_User_Map \
     --set auto-mapped-source-attribute:-none- \
     --set destination-correlation-attributes:externalId \
@@ -169,4 +170,4 @@ dsconfig create-debug-target \
 # instance that has already been loaded with users, it is recommended that
 # the password attribute be added to the list of ignored destination attributes.
 #
-#resync --pipe-name PingDirectory_to_PingOne
+resync --pipe-name PingDirectory_to_PingOne
