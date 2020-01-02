@@ -54,12 +54,6 @@ dsconfig create-attribute-map \
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
-    --mapping-name resourceType \
-    --type constructed \
-    --set value-pattern:user
-
-dsconfig create-attribute-mapping \
-    --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name externalId \
     --type direct \
     --set from-attribute:entryUUID
