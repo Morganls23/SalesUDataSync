@@ -89,11 +89,11 @@ dsconfig create-attribute-mapping \
 # When using an Attribute Mapping to control a user's Population it is
 # necessary to define population as a JSON Attribute. See the comment below
 # attached to the JSON Attribute definition.
-#dsconfig create-attribute-mapping \
-#    --map-name PingDirectory_to_PingOne_User_Map \
-#    --mapping-name population \
-#    --type constructed \
-#    --set 'value-pattern:{"id":"${POPULATION_ID}"}}'
+dsconfig create-attribute-mapping \
+    --map-name PingDirectory_to_PingOne_User_Map \
+    --mapping-name population \
+    --type constructed \
+    --set 'value-pattern:{{"name":"${POPULATION_ID}"}}'
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
@@ -152,12 +152,12 @@ dsconfig create-json-attribute \
 # be set to "id". When using the Population Name, "id-field" and
 # "include-field" should be set to "name". This example assumes that you
 # are using the Population names in your Attribute Mappings for Population.
-#dsconfig create-json-attribute \
-#    --pipe-name PingDirectory_to_PingOne \
-#    --class-name "PingDirectory_to_PingOne User Sync Class" \
-#    --attribute-name population \
-#    --set id-field:id \
-#    --set include-field:id
+dsconfig create-json-attribute \
+    --pipe-name PingDirectory_to_PingOne \
+    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --attribute-name population \
+    --set id-field:id \
+    --set include-field:id
 
  #Setup Debug Targets for added logging
 dsconfig create-debug-target \

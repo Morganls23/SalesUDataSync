@@ -14,12 +14,12 @@ sleep 2
 #
 realtime-sync set-startpoint \
     --end-of-changelog \
-    --pipe-name PingDirectory_to_PingOne
+    --pipe-name pingdirectory_source-to-pingdirectory_destination
 
 #
 # Enable the sync pipe
 #
 dsconfig set-sync-pipe-prop \
-    --pipe-name PingDirectory_to_PingOne  \
+    --pipe-name pingdirectory_source-to-pingdirectory_destination  \
     --set started:true \
     --no-prompt
