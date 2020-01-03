@@ -9,12 +9,20 @@ while true ; do
 done
 sleep 2
 
+
+
+
+
+#Resyc the users
+resync --pipe-name PingDirectory_to_PingOne --excludeDestinationAttr password
+
 #
 # Set the sync pipe at the beginning of the changelog
 #
 realtime-sync set-startpoint \
     --end-of-changelog \
     --pipe-name PingDirectory_to_PingOne
+
 
 #
 # Enable the sync pipe
