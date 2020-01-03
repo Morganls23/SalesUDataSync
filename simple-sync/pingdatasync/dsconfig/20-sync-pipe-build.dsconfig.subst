@@ -56,7 +56,7 @@ dsconfig create-sync-pipe \
 dsconfig create-attribute-map \
     --map-name PingDirectory_to_PingOne_User_Map
 
-#dsconfig create-attribute-mapping \
+dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name resourceType \
     --type constructed \
