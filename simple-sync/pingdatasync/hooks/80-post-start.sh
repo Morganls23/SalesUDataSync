@@ -14,8 +14,11 @@ sleep 2
 
 
 #Resyc the users
-resync --pipe-name PingDirectory_to_PingOne --excludeDestinationAttr password
+resync \
+  --pipe-name PingDirectory_to_PingOne \
+  --excludeDestinationAttr password
 
+sleep 10
 #
 # Set the sync pipe at the beginning of the changelog
 #
