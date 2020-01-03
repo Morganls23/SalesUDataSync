@@ -180,4 +180,4 @@ dsconfig create-json-attribute \
 # instance that has already been loaded with users, it is recommended that
 # the password attribute be added to the list of ignored destination attributes.
 #
-resync --pipe-name PingDirectory_to_PingOne --excludeDestinationAttr password
+#resync --pipe-name PingDirectory_to_PingOne --excludeDestinationAttr password
