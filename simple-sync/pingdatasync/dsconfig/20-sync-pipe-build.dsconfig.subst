@@ -138,6 +138,7 @@ dsconfig create-sync-class \
     --set destination-correlation-attributes:username \
     --set destination-create-only-attribute:resourceType \
     --set creates-as-modifies:true \
+    --set modifies-as-creates:true \
     --set include-filter:(objectClass=person)
 
 # Define JSON Attributes
