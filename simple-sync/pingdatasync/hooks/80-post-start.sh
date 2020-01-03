@@ -10,12 +10,9 @@ done
 sleep 2
 
 
-
-
-
-#Resyc the users
+#Create initial user in P14C resyc the users
 resync \
-  --pipe-name PingDirectory_to_PingOne 
+  --pipe-name PingDirectory_to_PingOne
 
 #
 # Set the sync pipe at the beginning of the changelog
