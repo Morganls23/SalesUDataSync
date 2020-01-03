@@ -56,11 +56,11 @@ dsconfig create-sync-pipe \
 dsconfig create-attribute-map \
     --map-name PingDirectory_to_PingOne_User_Map
 
-dsconfig create-attribute-mapping \
-    --map-name PingDirectory_to_PingOne_User_Map \
-    --mapping-name resourceType \
-    --type constructed \
-    --set value-pattern:user
+#dsconfig create-attribute-mapping \
+#    --map-name PingDirectory_to_PingOne_User_Map \
+#    --mapping-name resourceType \
+#    --type constructed \
+#    --set value-pattern:user
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
@@ -137,7 +137,7 @@ dsconfig create-sync-class \
     --set destination-correlation-attributes:externalId \
     --set destination-correlation-attributes:username \
     --set destination-correlation-attributes:email \
-    --set destination-create-only-attribute:resourceType \
+#    --set destination-create-only-attribute:resourceType \
     --set creates-as-modifies:true \
     --set include-filter:(objectClass=person)
 
