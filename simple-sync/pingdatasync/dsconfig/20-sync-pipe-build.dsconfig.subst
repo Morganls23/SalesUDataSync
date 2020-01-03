@@ -93,7 +93,7 @@ dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name population \
     --type constructed \
-    --set 'value-pattern:{{"name":"${POPULATION_ID}"}}'
+    --set 'value-pattern:{{"id":"${POPULATION_ID}"}}'
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
@@ -160,18 +160,18 @@ dsconfig create-json-attribute \
     --set include-field:id
 
  #Setup Debug Targets for added logging
-dsconfig create-debug-target \
-    --publisher-name "File-Based Debug Logger" \
-    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
-    --set debug-level:verbose
+#dsconfig create-debug-target \
+#    --publisher-name "File-Based Debug Logger" \
+#    --target-name com.unboundid.directory.sync.pingone.PingOneCustomerSyncDestination \
+#    --set debug-level:verbose
 
 # This will log all of the raw HTTP traffic between PingOne and DataSync,
 # which can include sensitive information like user passwords and
 # authentication tokens. DO NOT leave on in a Production environment.
-dsconfig create-debug-target \
-    --publisher-name "File-Based Debug Logger" \
-    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
-    --set debug-level:verbose
+#dsconfig create-debug-target \
+#    --publisher-name "File-Based Debug Logger" \
+#    --target-name com.unboundid.directory.sync.pingone.HTTPTrafficLogger \
+#    --set debug-level:verbose
 
 
 #### RESYNC ####
