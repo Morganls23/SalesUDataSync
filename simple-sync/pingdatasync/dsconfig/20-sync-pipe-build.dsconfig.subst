@@ -133,6 +133,7 @@ dsconfig create-sync-class \
     --set destination-correlation-attributes:externalId \
     --set destination-correlation-attributes:username \
     --set destination-correlation-attributes:email \
+    --set destination-create-only-attribute:resourceType \
     --set creates-as-modifies:true \
     --set include-filter:(objectClass=person)
 
