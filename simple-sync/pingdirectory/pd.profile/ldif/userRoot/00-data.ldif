@@ -44,7 +44,7 @@ sn: Brooke
 cn: Raeann Brooke
 uid: user.0
 givenName: Raeann
-telephoneNumber: 2677601164
+telephoneNumber: 267-760-1164
 userPassword: 2FederateM0re
 
 dn: uid=user.1,ou=People,ou=source,${USER_BASE_DN}
@@ -55,7 +55,7 @@ objectClass: inetOrgPerson
 sn: Seawell
 cn: Esko Seawell
 givenName: Esko
-telephoneNumber:5555555554
+telephoneNumber:555-555-5554
 uid: user.1
 userPassword: 2FederateM0re
 
@@ -68,7 +68,7 @@ sn: Tancordo
 cn: Sidonia Tancordo
 uid: user.2
 givenName: Sidonia
-telephoneNumber: 3258956452
+telephoneNumber: 325-895-6452
 userPassword: 2FederateM0re
 
 dn: uid=user.3,ou=People,ou=source,${USER_BASE_DN}
@@ -79,7 +79,7 @@ objectClass: inetOrgPerson
 sn: Knio
 cn: Pierre-Marc Knio
 givenName:Pierre-Marc
-telephoneNumber: 4567892889
+telephoneNumber: 456-789-2889
 uid: user.3
 userPassword: 2FederateM0re
 
