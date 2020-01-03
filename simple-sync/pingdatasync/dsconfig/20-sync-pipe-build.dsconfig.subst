@@ -71,8 +71,8 @@ dsconfig create-attribute-mapping \
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
     --mapping-name username \
-    --type constructed \
-    --set value-pattern:{givenname}.{sn}
+    --type direct \
+    --set value-pattern:uid
 
 dsconfig create-attribute-mapping \
     --map-name PingDirectory_to_PingOne_User_Map \
