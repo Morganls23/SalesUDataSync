@@ -27,7 +27,7 @@ dsconfig create-sync-destination \
     --destination-name PingOne \
     --type ping-one-customer \
     --set api-url:https://api.pingone.com/v1 \
-    --set auth-url:https://auth.pingone.com/${PING_ONE_ENV_ID}  /as/token \
+    --set auth-url:https://auth.pingone.com/${PING_ONE_ENV_ID}/as/token \
     --set environment-id:${PING_ONE_ENV_ID} \
     --set oauth-client-id:${PING_ONE_OAUTH_CLIENT_ID} \
     --set oauth-client-secret:${PING_ONE_OAUTH_CLIENT_SECRET}
