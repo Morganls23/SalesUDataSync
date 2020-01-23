@@ -30,7 +30,7 @@ services:
       - SERVER_PROFILE_URL=https://github.com/Morganls23/SalesUDataSync.git
       - SERVER_PROFILE_PATH=simple-sync/pingdatasync
       - PING_IDENTITY_ACCEPT_EULA=YES
-      - PING_ONE_ENV_ID=YourEnvironmentID
+      - PING_ONE_ENV_ID=YourEnvID
       - PING_ONE_OAUTH_CLIENT_ID=YourClientID
       - PING_ONE_OAUTH_CLIENT_SECRET=YourClientSecret
       #- POPULATION_ID=YourPopulationID

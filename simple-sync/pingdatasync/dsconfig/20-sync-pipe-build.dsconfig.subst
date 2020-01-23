@@ -130,7 +130,7 @@ dsconfig create-json-attribute-mapping-field \
 # Create a Sync Class and associate the defined Attribute Map
 dsconfig create-sync-class \
     --pipe-name PingDirectory_to_PingOne \
-    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --class-name "PingDirectory_to_PingOne_User_Sync_Class" \
     --set allow-destination-renames:false \
     --set attribute-map:PingDirectory_to_PingOne_User_Map \
     --set auto-mapped-source-attribute:-none- \
@@ -144,7 +144,7 @@ dsconfig create-sync-class \
 # Define JSON Attributes
 dsconfig create-json-attribute \
     --pipe-name PingDirectory_to_PingOne \
-    --class-name "PingDirectory_to_PingOne User Sync Class" \
+    --class-name "PingDirectory_to_PingOne_User_Sync_Class" \
     --attribute-name name
 
 # It is important that the JSON Attribute defined for Population
@@ -155,7 +155,7 @@ dsconfig create-json-attribute \
 # are using the Population names in your Attribute Mappings for Population.
 #dsconfig create-json-attribute \
 #    --pipe-name PingDirectory_to_PingOne \
-#    --class-name "PingDirectory_to_PingOne User Sync Class" \
+#    --class-name "PingDirectory_to_PingOne_User_Sync_Class" \
 #    --attribute-name population \
 #    --set id-field:id \
 #    --set include-field:id
