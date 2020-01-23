@@ -33,7 +33,7 @@ services:
       - PING_ONE_ENV_ID=YourEnvironmentID
       - PING_ONE_OAUTH_CLIENT_ID=YourClientID
       - PING_ONE_OAUTH_CLIENT_SECRET=YourClientSecret
-      - POPULATION_ID=YourPopulationID
+      #- POPULATION_ID=YourPopulationID
     env_file:
       - ~/.pingidentity/devops
     #volumes:
